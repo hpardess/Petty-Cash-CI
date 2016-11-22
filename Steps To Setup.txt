@@ -1,3 +1,4 @@
+*** Setup Fresh Laravel 5.3 ***
 - Download wamp: http://www.wampserver.com/en/
 - Create a database locally named homestead utf8_general_ci
 - Create a user in database with (username: homestead password: secret) with granting all priviliges.
@@ -10,5 +11,10 @@
 - Run php artisan migrate
 - Run php artisan db:seed to run seeders, if any.
 - Run php artisan serve
+
+
+*** Setup Larvel Authentication ***
+- Run php artisan make:auth
+
 
 You can now access your project at localhost:8000 :)
