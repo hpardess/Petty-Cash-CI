@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        $this->call(LaratrustSeeder::class);
+        
         DB::table('users')->insert([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',

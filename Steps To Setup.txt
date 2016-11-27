@@ -15,6 +15,100 @@
 
 *** Setup Larvel Authentication ***
 - Run php artisan make:auth
+- Run php artisan migrate
 
+*** How to add LaraTrust ***
+1) In order to install Laravel 5 Laratrust, just add the following to your composer.json. Then run composer update:
+"santigarcor/laratrust": "3.0.*"
+
+or you can run the composer require command from your terminal:
+composer require "santigarcor/laratrust:3.0.*"
+
+2) Then in your config/app.php add the following to the providers array:
+    Laratrust\LaratrustServiceProvider::class,
+
+3) In the same config/app.php and add the following to the aliases array:
+    'Laratrust'   => Laratrust\LaratrustFacade::class,
+
+4) If you are going to use Middleware (requires Laravel 5.1 or later) you also need to add the following to routeMiddleware array in app/Http/Kernel.php.
+    'role' => \Laratrust\Middleware\LaratrustRole::class,
+    'permission' => \Laratrust\Middleware\LaratrustPermission::class,
+    'ability' => \Laratrust\Middleware\LaratrustAbility::class,
+
+- Configuration Files
+Set the property values in the config/auth.php. These values will be used by laratrust to refer to the correct user model.
+You can also publish the configuration for this package to further customize table names and model namespaces.
+Just use php artisan vendor:publish and a laratrust.php file will be created in your app/config directory.
+
+- Automatic setup (Recommended)
+If you want to let laratrust to setup by itselft, just run the following command:
+php artisan laratrust:setup
+
+This command will generate the migrations, create the Role and Permission models and will add the trait to the User model.
+    The user trait will be added to the Model configured in the auth.php file.
+And then don't forget to run:
+composer dump-autoload
+
+- To generate the seeder you have to run:
+    php artisan laratrust:seeder
+
+and
+    composer dump-autoload
+
+And in the database/seeds/DatabaseSeeder.php file you have to add to the run method:
+    $this->call(LaratrustSeeder::class);
+
+After you run php artisan vendor:publish, you will have a config/laratrust_seeder.php file 
+
+
+
+
+
+
+
+
+
+
+
+
+*** Setup Commands ***
+
+    git clone https://github.com/..........
+    composer install
+    npm install
+    bower install
+    cp .env.example .env
+    php artisan key:generate
+    php artisan migrate
+    Set administrator info in UserSeeder.php
+    php artisan db:seed
+    gulp --production (Install gulp (sudo npm install -g gulp) if needed)
+
+
+*** Features ***
+
+    Secure user registration and login
+    -- Social Authentication using Facebook, Twitter and Google+
+    Password reset
+    -- Two-Factor Authentication
+    Remember Me feature on login
+    -- Login with email or username
+    -- Google reCAPTCHA on registration
+    -- Authentication Throttling (lock user account after few incorrect login - attempts)
+    -- Interactive Dashboard
+    -- Unlimited number of user roles
+    -- Powerful admin panel
+    -- Unlimited number of permissions
+    -- Manage permissions from admin interface
+    -- Assign permission to roles
+    -- Easily check if user has permission to perform some action
+    -- User Activity Log
+    -- Avatar upload with crop feature
+    Built using Twitter Bootstrap
+    -- Active Sessions Management (see and manage all your active sessions)
+    Full unicode support
+    -- Client side and server side form validation
+    -- Fully customisable from settings section
+    -- Localization support – Translate the application to any language
 
 You can now access your project at localhost:8000 :)
