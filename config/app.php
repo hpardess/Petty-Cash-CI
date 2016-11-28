@@ -180,6 +180,9 @@ return [
 
         // Laratrust
         Laratrust\LaratrustServiceProvider::class,
+
+        // HTML
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -229,6 +232,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Laratrust'   => Laratrust\LaratrustFacade::class,
+
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
