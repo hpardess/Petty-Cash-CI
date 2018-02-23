@@ -1,0 +1,8 @@
+- Download the latest version of CI from https://codeigniter.com/
+- Extract the Zip file in desired destination place.
+- Rename the .env.example to .env
+- Enter proper database connection parameters in .env file
+- open application/config/config.php and set your base URL. If you intend to use encryption or sessions, set your encryption key.
+- open application/config/database.php and set your database settings.
+- Create database in MySQL petty_cash
+- used https://github.com/bcit-ci/CodeIgniter/wiki/Permission-Class for permission management
