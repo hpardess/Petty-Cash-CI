@@ -11,7 +11,7 @@
 - used https://github.com/bcit-ci/CodeIgniter/wiki/Permission-Class for permission management
 
 
-
+- Run the project/database.sql file in phpMyAdmin to create the required database tables with sample data.
 
 
 
