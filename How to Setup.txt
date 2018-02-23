@@ -5,4 +5,23 @@
 - open application/config/config.php and set your base URL. If you intend to use encryption or sessions, set your encryption key.
 - open application/config/database.php and set your database settings.
 - Create database in MySQL petty_cash
+- open application>config>autoload.php and load the database and session library so we can use it in our application.
+- set encription key $config['encryption_key']
+- add .htaccess to overcome from index.php in URI
 - used https://github.com/bcit-ci/CodeIgniter/wiki/Permission-Class for permission management
+
+
+
+
+
+
+
+Codeignator Naming Convention:
+- Controller
+-- The file must be called with a capital letter.
+-- Class names must start with an uppercase letter.
+-- The “index” method is always loaded by default if the second segment of the URI is empty.
+-- The second segment of the URI determines which method in the controller gets called.
+
+- Model
+-- 
