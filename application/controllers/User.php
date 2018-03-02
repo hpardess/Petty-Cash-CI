@@ -19,7 +19,9 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view("user/index.php");
+		$data['breadcrumbs'] = $this->load->view('user/index_breadcrumb', '', true);
+		$data['content'] = $this->load->view('user/index', '', true);
+		$this->load->view('default_layout', $data);
 	}
 
 	// public function register_user(){
