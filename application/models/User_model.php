@@ -23,8 +23,6 @@ class User_model extends CI_model{
 		else{
 			return false;
 		}
-
-
 	}
 	public function email_check($email){
 
