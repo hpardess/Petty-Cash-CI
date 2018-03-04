@@ -45,7 +45,7 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('email',$data['email']);
 			$this->session->set_userdata('full_name',$data['full_name']);
 			$this->session->set_userdata('date_of_birth',$data['date_of_birth']);
-			$this->session->set_userdata('mobile_number',$data['mobile_number']);
+			$this->session->set_userdata('phone_number',$data['phone_number']);
 			$this->session->set_userdata('isLoggedIn', 1);
 
 			//redirect('home', 'refresh');
@@ -80,14 +80,14 @@ class Login extends CI_Controller {
 				'email'=>$this->input->post('email'),
 				'password'=>md5($this->input->post('password')),
 				'date_of_birth'=>$this->input->post('date_of_birth'),
-				'mobile_number'=>$this->input->post('mobile_number')
+				'phone_number'=>$this->input->post('phone_number')
 			);
 			//print_r($user);
 
 			$this->form_validation->set_rules('full_name', 'Full Name', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-			$this->form_validation->set_rules('mobile_number', 'mobile_number', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('phone_number', 'phone_number', 'trim|required|xss_clean');
 
 			if($this->form_validation->run() == FALSE) {
 				$email_check=$this->user_model->email_check($user['email']);
@@ -125,7 +125,7 @@ class Login extends CI_Controller {
 	// 		$this->session->set_userdata('email',$data['email']);
 	// 		$this->session->set_userdata('full_name',$data['full_name']);
 	// 		$this->session->set_userdata('date_of_birth',$data['date_of_birth']);
-	// 		$this->session->set_userdata('mobile_number',$data['mobile_number']);
+	// 		$this->session->set_userdata('phone_number',$data['phone_number']);
 	// 		$this->session->set_userdata('isLoggedIn', 1);
 
 	// 		redirect('welcome', 'refresh');

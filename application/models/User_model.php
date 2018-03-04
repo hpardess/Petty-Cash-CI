@@ -6,6 +6,8 @@
 
 class User_model extends CI_model{
 
+	public $table = 'user';
+
 	public function register_user($user){
 		$this->db->insert('user', $user);
 	}
@@ -39,5 +41,41 @@ class User_model extends CI_model{
 
 	}
 
+
+// ============================================
+
+	public function get_all()
+	{
+		$this->db->from($this->table);
+		$query=$this->db->get();
+		return $query->result();
+	}
+
+	public function get_by_id($id)
+	{
+		$this->db->from($this->table);
+		$this->db->where('id',$id);
+		$query = $this->db->get();
+ 
+		return $query->row();
+	}
+
+	public function add($data)
+	{
+		$this->db->insert($this->table, $data);
+		return $this->db->insert_id();
+	}
+
+	public function update($where, $data)
+	{
+		$this->db->update($this->table, $data, $where);
+		return $this->db->affected_rows();
+	}
+ 
+	public function delete_by_id($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete($this->table);
+	}
 
 }

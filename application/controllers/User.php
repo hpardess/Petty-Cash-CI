@@ -19,8 +19,10 @@ class User extends CI_Controller {
 
 	public function index()
 	{
+		$view_data['users']=$this->user_model->get_all();
+
 		$data['breadcrumbs'] = $this->load->view('user/index_breadcrumb', '', true);
-		$data['content'] = $this->load->view('user/index', '', true);
+		$data['content'] = $this->load->view('user/index', $view_data, true);
 		$this->load->view('default_layout', $data);
 	}
 
@@ -100,5 +102,50 @@ class User extends CI_Controller {
 		redirect('user/login', 'refresh');
 	}
 
+// ========================================================
+
+	// public function index()
+	// {
+
+	// 	$data['users']=$this->user_model->get_all();
+	// 	$this->load->view('book_view',$data);
+	// }
+
+	public function add()
+	{
+		$data = array(
+				'full_name' => $this->input->post('full_name'),
+				'email' => $this->input->post('email'),
+				'date_of_birth' => $this->input->post('date_of_birth'),
+				'phone_number' => $this->input->post('phone_number'),
+			);
+		$insert = $this->user_model->book_add($data);
+		echo json_encode(array("status" => TRUE));
+	}
+
+	public function edit_ajax($id)
+	{
+		$data = $this->user_model->get_by_id($id);
+
+		echo json_encode($data);
+	}
+ 
+	public function update()
+	{
+		$data = array(
+				'full_name' => $this->input->post('full_name'),
+				'email' => $this->input->post('email'),
+				'date_of_birth' => $this->input->post('date_of_birth'),
+				'phone_number' => $this->input->post('phone_number'),
+			);
+		$this->user_model->book_update(array('id' => $this->input->post('id')), $data);
+		echo json_encode(array("status" => TRUE));
+	}
+ 
+	public function delete($id)
+	{
+		$this->user_model->delete_by_id($id);
+		echo json_encode(array("status" => TRUE));
+	}
 
 }
