@@ -20,6 +20,7 @@ class User_model extends CI_model{
 
 		if($query=$this->db->get())
 		{
+			log_message('DEBUG', 'User_model>login_user(): ' . $this->db->last_query());
 			return $query->row_array();
 		}
 		else{
@@ -32,6 +33,7 @@ class User_model extends CI_model{
 		$this->db->from('user');
 		$this->db->where('email',$email);
 		$query=$this->db->get();
+		log_message('DEBUG', 'User_model>email_check(): ' . $this->db->last_query());
 
 		if($query->num_rows()>0){
 			return false;
@@ -48,6 +50,7 @@ class User_model extends CI_model{
 	{
 		$this->db->from($this->table);
 		$query=$this->db->get();
+		log_message('DEBUG', 'User_model>get_all(): ' . $this->db->last_query());
 		return $query->result();
 	}
 
@@ -56,26 +59,31 @@ class User_model extends CI_model{
 		$this->db->from($this->table);
 		$this->db->where('id',$id);
 		$query = $this->db->get();
- 
+ 		log_message('DEBUG', 'User_model>get_by_id(): ' . $this->db->last_query());
 		return $query->row();
 	}
 
 	public function add($data)
 	{
 		$this->db->insert($this->table, $data);
-		return $this->db->insert_id();
+		$result = $this->db->insert_id();
+		log_message('DEBUG', 'User_model>add(): ' . $this->db->last_query());
+		return $result;
 	}
 
 	public function update($where, $data)
 	{
 		$this->db->update($this->table, $data, $where);
-		return $this->db->affected_rows();
+		$result = $this->db->affected_rows();
+		log_message('DEBUG', 'User_model>update(): ' . $this->db->last_query());
+		return $result;
 	}
  
 	public function delete_by_id($id)
 	{
 		$this->db->where('id', $id);
 		$this->db->delete($this->table);
+		log_message('DEBUG', 'User_model>delete_by_id(): ' . $this->db->last_query());
 	}
 
 }

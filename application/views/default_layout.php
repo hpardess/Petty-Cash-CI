@@ -5,6 +5,7 @@
 	<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 	<head>
 		<?php $this->load->view('includes/meta'); ?>
+		<?php echo $css; ?>
 	</head>
 	<body>
 		<!-- Left Panel -->
@@ -27,5 +28,6 @@
 		<!-- Right Panel -->
 
 		<?php $this->load->view('includes/footer_view'); ?>
+		<?php echo $js; ?>
 	</body>
 </html>

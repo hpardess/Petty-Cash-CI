@@ -40,7 +40,7 @@ body {
   width: 100%; }
 
 div[class*="col-"] {
-  float: left; }
+  float: right; }
 
 p {
   font-size: 16px;
