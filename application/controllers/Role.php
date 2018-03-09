@@ -39,17 +39,25 @@ class Role extends CI_Controller {
 
 	public function edit_ajax($id)
 	{
-		$data = $this->role_model->get_by_id($id);
+		$data['role'] = $this->role_model->get_by_id($id);
+		$data['permissions'] = $this->permission->get_all_permissions(true);
+
+		$roles = $this->permission->get_user_roles($id);
+        $permissions = $this->permission->get_roles_permissions($roles);
+		$data['selected_permissions'] = $permissions;
 
 		echo json_encode($data);
 	}
  
 	public function update()
 	{
+		$roleID = $this->input->post('id');
 		$data = array(
 				'name' => $this->input->post('name')
 			);
-		$this->role_model->update(array('id' => $this->input->post('id')), $data);
+
+		$this->permission->add_permissions_to_role($roleID, $this->input->post('permission'));
+		$this->role_model->update(array('id' => $roleID), $data);
 		echo json_encode(array("status" => TRUE));
 	}
  

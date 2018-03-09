@@ -29,8 +29,15 @@
 									<td><?php echo $user->date_of_birth;?></td>
 									<td><?php echo $user->phone_number;?></td>
 									<td>
-										<button class="btn btn-warning" onclick="edit_user(<?php echo $user->id;?>)"><i class="fa fa-edit"></i></button>
-										<button class="btn btn-danger" onclick="delete_user(<?php echo $user->id;?>)"><i class="fa fa-trash-o"></i></button>
+										<?php if (!in_array('user_view', $this->session->userdata('permissions'))) { ?>
+											<button class="btn btn-info" onclick="view_user(<?php echo $user->id;?>)"><i class="fa fa-file-text-o"></i></button>
+										<?php } ?>
+										<?php if (!in_array('user_edit', $this->session->userdata('permissions'))) { ?>
+											<button class="btn btn-warning" onclick="edit_user(<?php echo $user->id;?>)"><i class="fa fa-edit"></i></button>
+										<?php } ?>
+										<?php if (!in_array('user_delete', $this->session->userdata('permissions'))) { ?>
+											<button class="btn btn-danger" onclick="delete_user(<?php echo $user->id;?>)"><i class="fa fa-trash-o"></i></button>
+										<?php } ?>
 									</td>
 								</tr>
 							<?php }?>

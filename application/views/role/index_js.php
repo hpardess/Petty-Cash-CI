@@ -41,8 +41,21 @@
 			dataType: "JSON",
 			success: function(data)
 			{
-				$('[name="id"]').val(data.id);
-				$('[name="name"]').val(data.name);
+				console.log(data);
+				$('[name="id"]').val(data.role.id);
+				$('[name="name"]').val(data.role.name);
+
+				var permissions_area = $('.permissions-area');
+				var permissions = data.permissions;
+				$('.permissions-area').empty();
+				for(var i=0; i<permissions.length; i++) {
+					var lableEl = $('<label class="form-check-label col-md-6">');
+					var radioEl = $('<input type="checkbox" name="permission[]" class="form-check-input">').val(permissions[i].id);
+					if($.inArray(permissions[i].name, data.selected_permissions) != -1) {
+						$(radioEl).attr('checked', true);
+					}
+					$(lableEl).append(radioEl).append(permissions[i].name).appendTo(permissions_area);
+				}
 
 				$('#modal-form').modal('show'); // show bootstrap modal when complete loaded
 				$('.modal-title').text('Edit Role'); // Set title to Bootstrap modal title

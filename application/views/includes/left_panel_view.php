@@ -21,8 +21,7 @@
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-user"></i><a href="<?php echo base_url(); ?>user">User Management</a></li>
                         <li><i class="menu-icon fa fa-users"></i><a href="<?php echo base_url(); ?>role">Role Management</a></li>
-                        <li><i class="menu-icon fa fa-users"></i><a href="<?php echo base_url(); ?>language">Language Management</a></li>
-                        <li><i class="menu-icon fa fa-users"></i><a href="<?php echo base_url(); ?>label">Label Management</a></li>
+                        <li><i class="menu-icon fa fa-sitemap"></i><a href="<?php echo base_url(); ?>label">Lang Label Management</a></li>
                     </ul>
                 </li>
 

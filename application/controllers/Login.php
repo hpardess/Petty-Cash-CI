@@ -48,6 +48,10 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('phone_number',$data['phone_number']);
 			$this->session->set_userdata('isLoggedIn', 1);
 
+        	$roles = $this->permission->get_user_roles($data['id']);
+        	$permissions = $this->permission->get_roles_permissions($roles);
+			$this->session->set_userdata('permissions', $permissions);
+
 			//redirect('home', 'refresh');
 			return TRUE;
 
