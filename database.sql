@@ -71,10 +71,10 @@ INSERT INTO `permission` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (6, 'role_add', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
 (7, 'role_edit', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
 (8, 'role_delete', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
-(9, 'transaction_view', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
-(10, 'transaction_add', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
-(11, 'transaction_edit', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
-(12, 'transaction_delete', '2017-11-22 05:56:18', '2017-11-22 05:56:18');
+(9, 'requisition_view', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
+(10, 'requisition_add', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
+(11, 'requisition_edit', '2017-11-22 05:56:18', '2017-11-22 05:56:18'),
+(12, 'requisition_delete', '2017-11-22 05:56:18', '2017-11-22 05:56:18');
 
 
 --
@@ -136,3 +136,31 @@ INSERT INTO `user_has_role` (`user_id`, `role_id`) VALUES
 (2, 2),
 (2, 3),
 (3, 4);
+
+
+--
+-- Table structure for table `requisition`
+--
+
+CREATE TABLE `requisition` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `requisition_date` date NULL,
+  `item_title` varchar(50) NOT NULL,
+  `item_details` varchar(50) NOT NULL,
+  `item_quantity` int(11) NOT NULL,
+  `item_cost` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0 COMMENT '0: for pendding, 1: Approve, 3: Reject',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+--
+-- Dumping data for table `requisition`
+--
+
+INSERT INTO `requisition` (`id`, `requisition_date`, `item_title`, `item_details`, `item_quantity`, `item_cost`, `created_at`, `updated_at`) VALUES
+(1, '2018-03-01', 'Printer', 'A printer is required for finance department.', 3, 400, '2018-03-09 19:30:00', '2018-03-09 19:30:00');
+
+
