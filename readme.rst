@@ -43,13 +43,13 @@ Permission Libarary is autoloaded.
 Screen Shots
 *******************
 Login
-[Login Page](screenshots/login.png)
+![Login Page](screenshots/login.png)
 Dashboard
-[Dashboard Page](screenshots/dashboard.png)
+![Dashboard Page](screenshots/dashboard.png)
 User Management
-[User Management Page](screenshots/user_management.png)
+![User Management Page](screenshots/user_management.png)
 Role Management
-[Role Management Page](screenshots/role_management.png)
+![Role Management Page](screenshots/role_management.png)
 
 *******
 License
