@@ -43,13 +43,20 @@ Permission Libarary is autoloaded.
 Screen Shots
 *******************
 Login
-.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/login.png
+
+	.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/login.png
+
 Dashboard
-.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/dashboard.png
+
+	.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/dashboard.png
+
 User Management
-.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/user_management.png
+
+	.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/user_management.png
+
 Role Management
-.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/role_management.png
+
+	.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/role_management.png
 
 *******
 License
