@@ -49,8 +49,8 @@ Dashboard
 User Management
 ![User Management Page](/Petty-Cash-CI/screenshots/user_management.png)
 Role Management
-![Role Management Page](https://github.com/hpardess/Petty-Cash-CI/screenshots/role_management.png)
-
+![Role Management Page](https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/role_management.png)
+                        
 *******
 License
 *******
