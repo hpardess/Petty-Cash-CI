@@ -52,6 +52,7 @@ User Management
 Role Management
 [[https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/role_management.png]]
 
+.. image:: https://github.com/hpardess/Petty-Cash-CI/blob/master/screenshots/role_management.png
 *******
 License
 *******
