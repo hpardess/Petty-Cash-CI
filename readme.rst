@@ -39,6 +39,18 @@ Notes
 *******************
 Permission Libarary is autoloaded.
 
+*******************
+Screen Shots
+*******************
+Login
+[Login Page](screenshots/login.png)
+Dashboard
+[Dashboard Page](screenshots/dashboard.png)
+User Management
+[User Management Page](screenshots/user_management.png)
+Role Management
+[Role Management Page](screenshots/role_management.png)
+
 *******
 License
 *******
