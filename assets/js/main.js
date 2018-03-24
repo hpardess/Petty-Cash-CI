@@ -34,3 +34,21 @@ jQuery(document).ready(function($) {
 
 
 });
+
+function validate_form(formEl) {
+	console.log(formEl);
+	var success = true;
+	$('input', formEl).each(function(index, el) {
+		console.log(el);
+		if($(el).hasClass('required') == true) {
+			if ($(el).val().length < 1) {
+				$(el).addClass('is-invalid');
+				success = false;
+			} else {
+				$(el).removeClass('is-invalid');
+			}
+		}
+	});
+
+	return success;
+}

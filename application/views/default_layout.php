@@ -8,6 +8,7 @@
 		<?php echo $css; ?>
 	</head>
 	<body>
+		<div class="page-loader"><span class="fa fa-spinner"></span></div>
 		<!-- Left Panel -->
 		<?php $this->load->view('includes/left_panel_view'); ?>
 		<!-- Left Panel -->
@@ -27,6 +28,9 @@
 		</div><!-- /#right-panel -->
 		<!-- Right Panel -->
 
+		<!-- Modal -->
+		<div class="modal-container"></div>
+		
 		<?php $this->load->view('includes/footer_view'); ?>
 		<?php echo $js; ?>
 	</body>

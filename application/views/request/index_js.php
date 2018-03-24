@@ -1,4 +1,5 @@
-<script src="assets/js/lib/DataTables/datatables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/lib/DataTables/datatables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/lib/jquery-ui/jquery-ui.min.js"></script>
 <!-- <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
 <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
 <script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
@@ -13,7 +14,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#users-list').DataTable();
+		$('.datepicker').datepicker({dateFormat: 'yy-mm-dd'})
+		$('#request-list').DataTable();
 	});
 
 	var save_method; //for save method string

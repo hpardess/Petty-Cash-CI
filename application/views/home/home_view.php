@@ -90,9 +90,9 @@
             <div class="stat-widget-one">
                 <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                 <div class="stat-content dib">
-                    <div class="stat-text">Pendding Requisitions</div>
+                    <div class="stat-text">Unsubmitted Requests</div>
                     <div class="stat-digit">961</div>
-                    <div class="stat-text">Cost</div>
+                    <div class="stat-text">Submitted Requests</div>
                     <div class="stat-digit">961</div>
                 </div>
             </div>
